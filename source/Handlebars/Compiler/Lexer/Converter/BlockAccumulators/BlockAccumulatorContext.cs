@@ -59,8 +59,9 @@ namespace HandlebarsDotNet.Compiler
         private static bool IsBlockHelper(Expression item, HandlebarsConfiguration configuration)
         {
             item = UnwrapStatement(item);
-            if (item is HelperExpression hitem)
+            if (item is HelperExpression)
             {
+                var hitem = item as HelperExpression;
                 var helperName = hitem.HelperName;
                 return !configuration.Helpers.ContainsKey(helperName) &&
                        configuration.BlockHelpers.ContainsKey(helperName.Replace("#", ""));

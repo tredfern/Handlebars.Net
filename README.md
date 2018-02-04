@@ -1,3 +1,8 @@
+# UNITY VERSION
+This fork is purely for my attempts to get Handlebars.Net running inside the Unity Engine. Completely experimental.
+
+
+
 Handlebars.Net [![Build Status](https://travis-ci.org/rexm/Handlebars.Net.svg?branch=master)](https://travis-ci.org/rexm/Handlebars.Net)
 ==============
 

@@ -39,8 +39,9 @@ namespace HandlebarsDotNet.Compiler
                         yield return item;
                         continue;
                     }
-                    if (item is WordExpressionToken word)
+                    if (item is WordExpressionToken)
                     {
+                        var word = item as WordExpressionToken;
                         if (IsRegisteredHelperName(word.Value))
                         {
                             yield return HandlebarsExpression.Helper(word.Value);

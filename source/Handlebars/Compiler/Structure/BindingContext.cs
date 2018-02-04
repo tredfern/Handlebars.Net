@@ -42,7 +42,8 @@ namespace HandlebarsDotNet.Compiler
             {
                 InlinePartialTemplates = parent.InlinePartialTemplates;
 
-                if (value is HashParameterDictionary dictionary) {
+                if (value is HashParameterDictionary) {
+                    var dictionary = value as HashParameterDictionary;
                     // Populate value with parent context
                     foreach (var item in GetContextDictionary(parent.Value)) {
                         if (!dictionary.ContainsKey(item.Key))
@@ -129,7 +130,8 @@ namespace HandlebarsDotNet.Compiler
             if (target == null)
                 return dict;
 
-            if (target is IDictionary<string, object> dictionary) {
+            if (target is IDictionary<string, object>) {
+                var dictionary = target as IDictionary<string, object>;
                 foreach (var item in dictionary)
                     dict[item.Key] = item.Value;
             } else {
